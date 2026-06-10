@@ -1,5 +1,5 @@
 <!--BẮT ĐẦU TIỆN ÍCH 5W1H (Copy từ đây)-->
-<div id="app-5w1h-container" style="background-color: #eef2ff; border-radius: 1rem; box-sizing: border-box; font-family: Arial, sans-serif; margin: 1.5rem auto; max-width: 100%; padding: 1rem; width: 100%;">
+<div id="app-5w1h-container" style="background-color: #faf6f0; border-radius: 1rem; box-sizing: border-box; font-family: Arial, sans-serif; margin: 1.5rem auto; max-width: 100%; padding: 1rem; width: 100%;">
 
     <style>
         /* 1. Reset Cục bộ */
@@ -10,9 +10,14 @@
             padding: 0 !important;
         }
         #app-5w1h-container {
-            padding: 1rem !important;
+            padding: 0.75rem !important;
             /* Nền ngoài cùng: indigo-50 — khớp bg-indigo-50 của theme */
-            background-color: #eef2ff !important;
+            background-color: #faf6f0 !important;
+        }
+        @media (min-width: 480px) {
+            #app-5w1h-container {
+                padding: 1rem !important;
+            }
         }
         #app-5w1h-container h1, #app-5w1h-container h2, #app-5w1h-container h3,
         #app-5w1h-container p, #app-5w1h-container label,
@@ -26,7 +31,12 @@
         #app-5w1h-container .main-layout {
             display: grid !important;
             grid-template-columns: 1fr !important;
-            gap: 1.5rem !important;
+            gap: 1rem !important;
+        }
+        @media (min-width: 480px) {
+            #app-5w1h-container .main-layout {
+                gap: 1.5rem !important;
+            }
         }
         @media (min-width: 768px) {
             #app-5w1h-container .main-layout {
@@ -40,11 +50,16 @@
         /* 3. Card chung — dùng site-card style của theme */
         #app-5w1h-container .card {
             border-radius: 1rem !important;
-            padding: 1.5rem !important;
+            padding: 1rem !important;
             box-shadow: 0 4px 6px -1px rgba(28,25,23,0.04), 0 2px 4px -2px rgba(28,25,23,0.02) !important;
             overflow: hidden !important;
             border-width: 1px !important;
             border-style: solid !important;
+        }
+        @media (min-width: 480px) {
+            #app-5w1h-container .card {
+                padding: 1.5rem !important;
+            }
         }
         /* Card 1 — Nhập liệu: nền trắng, viền indigo nhạt (khớp card-bg + border theme) */
         #app-5w1h-container .card-1 {
@@ -53,7 +68,7 @@
         }
         /* Card 2 — Kết quả: nền indigo-50 nhạt */
         #app-5w1h-container .card-2 {
-            background-color: #eef2ff !important; /* indigo-50 */
+            background-color: #faf6f0 !important; /* indigo-50 */
             border-color: #c7d2fe !important;     /* indigo-200 */
         }
         /* Card 3 — Chat: nền slate-50 (khớp với màu sidebar theme) */
@@ -69,7 +84,7 @@
 
         /* 4. Tiêu đề */
         #app-5w1h-container .main-title {
-            font-size: 1.75rem !important;
+            font-size: 1.25rem !important;
             font-weight: 700 !important;
             text-align: center !important;
             padding-bottom: 0.5rem !important;
@@ -80,19 +95,36 @@
             background-clip: text !important;
             color: transparent !important;
         }
+        @media (min-width: 480px) {
+            #app-5w1h-container .main-title {
+                font-size: 1.75rem !important;
+            }
+        }
         #app-5w1h-container .sub-title {
-            font-size: 1.125rem !important;
+            font-size: 0.9rem !important;
             color: #57534e !important; /* stone-600 */
             margin-bottom: 1.5rem !important;
             text-align: center !important;
         }
+        @media (min-width: 480px) {
+            #app-5w1h-container .sub-title {
+                font-size: 1.125rem !important;
+            }
+        }
         #app-5w1h-container .card-title {
-            font-size: 1.5rem !important;
+            font-size: 1.1rem !important;
             font-weight: 600 !important;
-            padding-bottom: 0.75rem !important;
-            margin-bottom: 1.5rem !important;
+            padding-bottom: 0.6rem !important;
+            margin-bottom: 1rem !important;
             border-bottom-width: 2px !important;
             border-bottom-style: solid !important;
+        }
+        @media (min-width: 480px) {
+            #app-5w1h-container .card-title {
+                font-size: 1.5rem !important;
+                padding-bottom: 0.75rem !important;
+                margin-bottom: 1.5rem !important;
+            }
         }
         /* Màu tiêu đề card theo hệ màu theme */
         #app-5w1h-container .card-title-1 {
@@ -116,9 +148,15 @@
         #app-5w1h-container .platform-selector {
             background-color: #ffffff !important;
             border: 1px solid #e0e7ff !important; /* indigo-100 */
-            padding: 1.25rem !important;
+            padding: 0.875rem !important;
             border-radius: 1rem !important;
-            margin-bottom: 1.5rem !important;
+            margin-bottom: 1.25rem !important;
+        }
+        @media (min-width: 480px) {
+            #app-5w1h-container .platform-selector {
+                padding: 1.25rem !important;
+                margin-bottom: 1.5rem !important;
+            }
         }
         #app-5w1h-container .platform-title {
             font-size: 1.125rem !important;
@@ -136,7 +174,7 @@
         #app-5w1h-container .platform-label {
             display: flex !important;
             align-items: center !important;
-            padding: 0.75rem 1rem !important;
+            padding: 0.5rem 0.75rem !important;
             border-width: 2px !important;
             border-style: solid !important;
             border-color: #e2e8f0 !important;  /* slate-200 */
@@ -144,13 +182,20 @@
             cursor: pointer !important;
             transition: all 0.2s ease !important;
             background-color: #ffffff !important;
+            font-size: 0.875rem !important;
+        }
+        @media (min-width: 480px) {
+            #app-5w1h-container .platform-label {
+                padding: 0.75rem 1rem !important;
+                font-size: 1rem !important;
+            }
         }
         #app-5w1h-container .platform-label input[type="radio"] {
             display: none !important;
         }
         /* Trạng thái selected — dùng màu indigo của theme */
         #app-5w1h-container .platform-label.selected {
-            background-color: #eef2ff !important; /* indigo-50 */
+            background-color: #faf6f0 !important; /* indigo-50 */
             border-color: #4f46e5 !important;     /* indigo-600 */
         }
         #app-5w1h-container .platform-label.selected-fb {
@@ -208,10 +253,10 @@
         /* 7. Nút */
         #app-5w1h-container .button {
             width: 100% !important;
-            font-size: 1.125rem !important;
+            font-size: 1rem !important;
             font-weight: 700 !important;
             color: #ffffff !important;
-            padding: 0.85rem 1.5rem !important;
+            padding: 0.75rem 1rem !important;
             border-radius: 0.75rem !important;
             border: none !important;
             cursor: pointer !important;
@@ -220,6 +265,12 @@
             justify-content: center !important;
             align-items: center !important;
             gap: 0.5rem !important;
+        }
+        @media (min-width: 480px) {
+            #app-5w1h-container .button {
+                font-size: 1.125rem !important;
+                padding: 0.85rem 1.5rem !important;
+            }
         }
         #app-5w1h-container .button:disabled {
             opacity: 0.6 !important;
@@ -244,11 +295,19 @@
         /* Nút chat — indigo-400 (nhẹ hơn, phân cấp thị giác) */
         #app-5w1h-container .button-chat {
             background-color: #818cf8 !important; /* indigo-400 */
-            padding: 0.75rem 1.25rem !important;
-            font-size: 1rem !important;
+            padding: 0.65rem 1rem !important;
+            font-size: 0.9rem !important;
             width: auto !important;
+            flex-shrink: 0 !important;
             flex-grow: 0 !important;
+            white-space: nowrap !important;
             box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.15) !important;
+        }
+        @media (min-width: 480px) {
+            #app-5w1h-container .button-chat {
+                padding: 0.75rem 1.25rem !important;
+                font-size: 1rem !important;
+            }
         }
         #app-5w1h-container .button-chat:hover:not(:disabled) {
             background-color: #6366f1 !important; /* indigo-500 */
@@ -256,10 +315,16 @@
 
         /* 8. Kết quả & Chat */
         #app-5w1h-container .article-output {
-            min-height: 200px !important;
-            max-height: 600px !important;
+            min-height: 150px !important;
+            max-height: 400px !important;
             overflow-y: auto !important;
-            padding-right: 0.5rem !important;
+            padding-right: 0.25rem !important;
+        }
+        @media (min-width: 480px) {
+            #app-5w1h-container .article-output {
+                max-height: 600px !important;
+                padding-right: 0.5rem !important;
+            }
         }
         #app-5w1h-container .article-output h2 {
             font-size: 1.75rem !important;
@@ -287,13 +352,19 @@
         }
 
         #app-5w1h-container .chat-history {
-            height: 250px !important;
+            height: 200px !important;
             background-color: #ffffff !important;
             border-radius: 0.75rem !important;
             border: 1px solid #f5f2eb !important; /* --border-color */
             padding: 1rem !important;
             overflow-y: auto !important;
-            margin-bottom: 1rem !important;
+            margin-bottom: 0.75rem !important;
+        }
+        @media (min-width: 480px) {
+            #app-5w1h-container .chat-history {
+                height: 250px !important;
+                margin-bottom: 1rem !important;
+            }
         }
         #app-5w1h-container .chat-bubble {
             padding: 0.75rem 1rem !important;
@@ -320,10 +391,13 @@
         }
         #app-5w1h-container .chat-input-group {
             display: flex !important;
-            gap: 0.75rem !important;
+            gap: 0.5rem !important;
+            align-items: flex-end !important;
+            min-width: 0 !important;
         }
         #app-5w1h-container .chat-input {
             flex-grow: 1 !important;
+            min-width: 0 !important;
         }
 
         /* 9. Loader & Modal */
@@ -351,13 +425,18 @@
         }
         #app-5w1h-container .modal-content {
             background-color: #ffffff !important;
-            padding: 2rem !important;
+            padding: 1.25rem !important;
             border-radius: 1rem !important;
             border: 1px solid #f5f2eb !important;
             max-width: 400px !important;
             width: 100% !important;
             z-index: 9999 !important;
             box-shadow: 0 20px 40px -15px rgba(28,25,23,0.15) !important;
+        }
+        @media (min-width: 480px) {
+            #app-5w1h-container .modal-content {
+                padding: 2rem !important;
+            }
         }
         #app-5w1h-container .modal-title {
             font-size: 1.5rem !important;
@@ -382,6 +461,20 @@
         }
         #app-5w1h-container .api-key-note a:hover {
             color: #4338ca !important;
+        }
+        /* Grid Độ dài + Phong cách: 1 cột mobile, 2 cột ≥480px */
+        #app-5w1h-container .options-grid {
+            display: grid !important;
+            gap: 0.75rem !important;
+            grid-template-columns: 1fr !important;
+            margin-top: 1.25rem !important;
+        }
+        @media (min-width: 480px) {
+            #app-5w1h-container .options-grid {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1rem !important;
+                margin-top: 1.5rem !important;
+            }
         }
     </style>
 
@@ -460,7 +553,7 @@
                     <textarea id="extra" placeholder="Trích dẫn, số liệu..." rows="2"></textarea>
                 </div>
 
-                <div style="display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; margin-top: 1.5rem;">
+                <div class="options-grid">
                     <div class="input-card">
                         <label>Độ dài</label>
                         <select id="length" style="background-color: transparent; border: none !important; font-size: 1rem; outline: none; padding: 0.25rem 0; width: 100%; color: #1c1917;">
