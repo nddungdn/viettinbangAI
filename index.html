@@ -365,6 +365,24 @@
             color: #be123c !important; /* rose-700 — màu lỗi, khớp rose dùng trong theme */
             margin-bottom: 1rem !important;
         }
+
+        /* API Key box */
+        #app-5w1h-container .api-key-box {
+            margin-bottom: 1.5rem !important;
+        }
+        #app-5w1h-container .api-key-note {
+            font-size: 0.8rem !important;
+            text-align: center !important;
+            margin-top: 0.4rem !important;
+        }
+        #app-5w1h-container .api-key-note a {
+            color: #4f46e5 !important;
+            text-decoration: underline !important;
+            text-underline-offset: 2px !important;
+        }
+        #app-5w1h-container .api-key-note a:hover {
+            color: #4338ca !important;
+        }
     </style>
 
     <!--HTML CỦA ỨNG DỤNG-->
@@ -398,6 +416,19 @@
         <!--CỘT 1: NHẬP LIỆU-->
         <div class="card card-1">
             <h2 class="card-title card-title-1">1. Nhập thông tin</h2>
+
+            <!-- Khung nhập API Key -->
+            <div class="api-key-box">
+                <div class="input-card" style="border-color: #c7d2fe !important;">
+                    <label style="color: #4338ca !important;">🔑 API Key Gemini của bạn</label>
+                    <input id="api-key-input" placeholder="Dán API Key vào đây..." type="password" autocomplete="off" />
+                </div>
+                <p class="api-key-note">
+                    <a href="https://www.hls.id.vn/2026/06/cach-tao-api-key-google-ai-studio.html" target="_blank" rel="noopener noreferrer">
+                        🔗 Xem cách tạo API Key cá nhân
+                    </a>
+                </p>
+            </div>
 
             <div id="news-form">
                 <div class="input-card">
@@ -514,8 +545,8 @@
     <script module="" type="">
         function initApp(container) {
 
-            const apiKey = "AIzaSyBLqed3dWqM7qRLLzX9Y1mmD6QFd5Mqmj4";
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const getApiKey = () => ($('#api-key-input').value || '').trim();
+            const getApiUrl = () => `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${getApiKey()}`;
 
             const $ = (selector) => container.querySelector(selector);
 
@@ -556,6 +587,10 @@ QUY TẮC BẮT BUỘC:
 4. Bài viết mới phải giữ lại thông tin cốt lõi của bài cũ.`;
 
             async function callGeminiAPI(history, systemPrompt) {
+                if (!getApiKey()) {
+                    showErrorModal("Vui lòng nhập API Key Gemini của bạn trước khi sử dụng.");
+                    return null;
+                }
                 const payload = {
                     contents: history,
                     systemInstruction: { parts: [{ text: systemPrompt }] },
@@ -565,7 +600,7 @@ QUY TẮC BẮT BUỘC:
                 let attempt = 0;
                 while (attempt < 3) {
                     try {
-                        const response = await fetch(apiUrl, {
+                        const response = await fetch(getApiUrl(), {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(payload)
